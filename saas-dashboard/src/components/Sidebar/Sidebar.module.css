@@ -1,0 +1,90 @@
+.nav {
+  padding: 20px 12px;
+  border-right: 1px solid #1C1C1C1A;
+  height: 100%;
+  background: #fff;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: #181924;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  margin-bottom: 6px;
+}
+
+.parent {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #222;
+  transition: background 0.18s, color 0.18s;
+}
+
+.parent:hover,
+.open > .parent {
+  background: #f5f7fa;
+}
+
+.arrow {
+  font-size: 16px;
+  margin-left: 4px;
+  color: #9298a4;
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 12px;
+  margin-top: 6px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .18s ease;
+}
+.open .submenu {
+  max-height: 400px;
+}
+
+.item a {
+  display: block;
+  padding: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #23272a;
+  font-size: 16px;
+  transition: background 0.18s, color 0.18s;
+}
+
+.item a:hover,
+.item a:focus {
+  background: #f5f7fa;
+  color: #181924;
+}
+
+.active,
+.item a.active,
+.submenu .active {
+  background: #f3f6fb;
+  color: #181924;
+  font-weight: 600;
+}
+
+.label {
+  vertical-align: middle;
+}

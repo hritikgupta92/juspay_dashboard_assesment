@@ -1,0 +1,155 @@
+/* Container and controls */
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  
+  .controls input {
+    width: 220px;
+    padding: 8px 14px;
+    border: 1px solid #e2e6ea;
+    border-radius: 8px;
+    background: #fafbfc;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s;
+  }
+  
+  .controls input:focus {
+    border-color: #4a90e2; /* Figma blue */
+  }
+  
+  /* Table styles */
+  .table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(20,25,30,0.05);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  
+  .table thead th {
+    text-align: left;
+    padding: 13px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #24272a;
+    background: #fafbfc;
+    border-bottom: 1px solid #e2e6ea;
+  }
+  
+  .table tbody tr {
+    transition: background 0.18s;
+  }
+  
+  .table tbody tr:hover {
+    background: rgba(74,144,226,0.07); /* subtle blue hover */
+  }
+  
+  .table td {
+    padding: 13px 16px;
+    font-size: 15px;
+    color: #222;
+    vertical-align: middle;
+    border-bottom: 1px solid #f3f4f8;
+  }
+  
+  .table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Checkbox styles */
+  .table input[type='checkbox'] {
+    accent-color: #4a90e2;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+  
+  /* Status pill styles */
+  .status {
+    display: inline-block;
+    padding: 4px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 16px;
+    background: #eef1fa;
+    color: #4a90e2;
+    min-width: 80px;
+    text-align: center;
+  }
+  
+  .status[data-status="Complete"] {
+    background: #eefaf0;
+    color: #49c35a;
+  }
+  
+  .status[data-status="Pending"] {
+    background: #faf9ee;
+    color: #f6c700;
+  }
+  
+  .status[data-status="Approved"] {
+    background: #fff7e5;
+    color: #f5a623;
+  }
+  
+  .status[data-status="Rejected"] {
+    background: #fbeaea;
+    color: #ed4b5f;
+  }
+  
+  .status[data-status="In Progress"] {
+    background: #eef1fa;
+    color: #4a90e2;
+  }
+  
+  /* Pagination styles */
+  .pager {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    margin-top: 24px;
+  }
+  
+  .pager button {
+    background: #fff;
+    border: 1px solid #e2e6ea;
+    color: #4a90e2;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 4px 14px;
+    cursor: pointer;
+    transition: background 0.16s, border 0.16s;
+  }
+  
+  .pager button:disabled {
+    color: #ccc;
+    border-color: #ecf0f1;
+    cursor: not-allowed;
+    background: #f5f6fa;
+  }
+  
+  .pager button:hover:not(:disabled) {
+    background: #f2f7ff;
+    border-color: #bcdffb;
+  }
+  
+  .pager span {
+    display: inline-block;
+    min-width: 28px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    background: #f4f7fb;
+    color: #222;
+    border-radius: 7px;
+    margin: 0 2px;
+  }
+  

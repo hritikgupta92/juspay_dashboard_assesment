@@ -1,0 +1,81 @@
+.card {
+    background: #f7f8fa;
+    border-radius: 18px;
+    padding: 18px 19px 14px 19px;
+    min-width: 150px;
+    box-shadow: 0 2px 12px rgba(23, 30, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: box-shadow 0.22s;
+  }
+  .card:hover {
+    box-shadow: 0 4px 24px rgba(23,30,42,0.08);
+  }
+  
+  .title {
+    color: #222;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 0.01em;
+    transition: color 0.18s;
+  }
+  
+  .valueContainer{
+    display: flex;
+    gap:2px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #181924;
+    display: inline-block;
+    margin-right: 14px;
+    transition: color 0.22s, transform 0.18s;
+  }
+  
+  .change {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    display: inline-flex;
+    align-items: center;
+    color: #222;
+    background: #eef1fa;
+    border-radius: 9px;
+    padding: 3px 9px 3px 9px;
+    margin-top: 4px;
+    margin-left: 2px;
+    transition: color 0.18s, background 0.18s, transform 0.18s;
+  }
+  
+  .change:after {
+    content: '  ';
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .change[data-positive="true"] {
+    color: #2CB67D;
+    background: #ebf8f3;
+  }
+  
+  .change[data-positive="false"] {
+    color: #ed4b5f;
+    background: #fbeaea;
+  }
+  
+  .card:hover .value,
+  .card:hover .change {
+    color: #007bff;
+    transform: translateY(-2px) scale(1.04);
+  }
+  
+  .card:hover .title {
+    color: #313465;
+  }
+  

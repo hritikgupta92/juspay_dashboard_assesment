@@ -1,0 +1,13 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 10px;
+  width:20%;
+}
+.charts
+{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(280px, 1fr));
+  gap: 10px;
+  width:80%;
+}
