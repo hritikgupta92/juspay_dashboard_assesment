@@ -8,6 +8,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  type ChartOptions // Import ChartOptions from chart.js
 } from "chart.js";
 import { Bar, Line } from "react-chartjs-2";
 import StatCard from "../components/Dashboard/StatCard";
@@ -54,7 +55,7 @@ const revenueLineData = {
   ],
 };
 
-const revenueLineOptions = {
+const revenueLineOptions: ChartOptions<'line'> = {
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
@@ -89,7 +90,7 @@ const revenueLineOptions = {
       grid: {
         display: true,
         color: "rgba(200, 200, 200, 0.3)",
-        drawBorder: false,
+
       },
       ticks: {
         callback: function (value: any) {
@@ -114,6 +115,53 @@ const revenueLineOptions = {
     line: {
       cubicInterpolationMode: "monotone",
     },
+  },
+};
+
+// Fix the barOptions type issue by explicitly typing it
+const barOptionsTyped: ChartOptions<'bar'> = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false,
+    },
+    tooltip: {
+      mode: "index",
+      intersect: false,
+    },
+  },
+  scales: {
+    x: {
+      stacked: true,
+      grid: {
+        display: false,
+      },
+      ticks: {
+        color: "#555",
+      },
+    },
+    y: {
+      stacked: true,
+      beginAtZero: true,
+      grid: {
+        color: "rgba(200, 200, 200, 0.3)",
+
+      },
+      ticks: {
+        callback: function (value: any) {
+          if (value >= 1000000) {
+            return (value / 1000000).toLocaleString() + "M";
+          }
+          return value.toLocaleString();
+        },
+        color: "#555",
+      },
+    },
+  },
+  animation: {
+    duration: 1000,
+    easing: 'easeOutQuart',
   },
 };
 
@@ -213,7 +261,7 @@ export default function Dashboard() {
           >
             Projections vs Actuals
           </h3>
-          <Bar data={barData} options={barOptions} />
+          <Bar data={barData} options={barOptionsTyped} />
         </div>
 
         <div className={styles.bottomRow}>

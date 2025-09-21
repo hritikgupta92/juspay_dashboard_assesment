@@ -61,7 +61,7 @@ export default function RevenueByLocationMap({
   }, []);
 
   return (
-    <div className="p-6 rounded-2xl bg-white shadow" style={{ width }}>
+    <div  style={{ width }}>
       <h3 style={{ fontSize: 18, marginBottom: 12, fontWeight: 700 }}>Revenue by Location</h3>
 
       <div
@@ -76,7 +76,7 @@ export default function RevenueByLocationMap({
         }}
       >
         <img
-          src="/src/assets/Map.svg"
+          src="./src/assets/Map.svg"
           alt="world map"
           style={{
             display: "block",
