@@ -12,7 +12,7 @@ import {
 } from "chart.js";
 import { Bar, Line } from "react-chartjs-2";
 import StatCard from "../components/Dashboard/StatCard";
-import { barData, barOptions } from "../data/dashboard";
+import { barData } from "../data/dashboard";
 import RevenueByLocationMap from "../components/Dashboard/RevenueByLocation";
 import TotalSales from "../components/Dashboard/TotalSales";
 import styles from "./Dashboard.module.css";

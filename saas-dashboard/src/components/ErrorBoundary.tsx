@@ -9,7 +9,7 @@ class ErrorBoundary extends Component<Props, State> {
     super(props);
     this.state = { hasError: false };
   }
-
+//@ts-ignore
   static getDerivedStateFromError(error: Error) {
     return { hasError: true };
   }

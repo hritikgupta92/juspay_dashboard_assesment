@@ -75,7 +75,7 @@ export default function OrdersTable() {
             </tr>
           </thead>
           <tbody>
-            {pageData.map((r, i) => (
+            {pageData.map((r:any) => (
               <tr key={r.id}>
                 <td>
                   <input type="checkbox" />
