@@ -1,0 +1,50 @@
+.pager {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    gap: 12px;  
+    margin-top: 24px;
+  }
+  
+  .pageNumber {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 32px;  
+    height: 32px;  
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    border-radius: 8px;  
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+
+  .pageNumber.active {
+    background: #f2f2f2;  
+  }
+  
+
+  .pageArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;  
+    border: none;  
+    color: #555;
+    font-size: 20px;  
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .pageArrow:hover:not(:disabled) {
+    color: #000;
+  }
+  
+  .pageArrow:disabled {
+    color: var(--text);
+    cursor: not-allowed;
+  }

@@ -19,7 +19,6 @@ const SidebarItem: React.FC<{item: MenuItem}> = ({item}) => {
     <li className={`${styles.item} ${open ? styles.open : ''}`}>
       <button className={styles.parent} onClick={() => setOpen(v => !v)}>
         <span>{item.label}</span>
-        <span className={styles.arrow}>{open ? '▾' : '▸'}</span>
       </button>
       <ul className={styles.submenu}>
         {item.children.map((c,i) => (

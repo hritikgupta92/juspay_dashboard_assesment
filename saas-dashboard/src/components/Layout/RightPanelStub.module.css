@@ -1,11 +1,11 @@
 .container {
     padding: 16px;
     background: var(--surface);
-    border-radius: 12px;
     box-shadow: var(--shadow);
-    height: calc(100vh - 40px); /* adjust if your layout padding differs */
+    height: 100% ; 
     overflow-y: auto;
     box-sizing: border-box;
+    border-left:1px solid #1C1C1C1A;
   }
   
   /* section */
@@ -36,7 +36,7 @@
     cursor: pointer;
   }
   
-  /* notifications / activities lists */
+
   .list {
     list-style: none;
     padding: 0;
@@ -61,7 +61,7 @@
     align-items: center;
   }
   
-  /* little dot for notifications */
+
   .dot {
     width: 10px;
     height: 10px;
@@ -72,7 +72,7 @@
     box-shadow: 0 4px 14px rgba(91,108,255,0.15);
   }
   
-  /* titles/times */
+
   .title {
     font-size: 13px;
     color: var(--text);
@@ -83,7 +83,6 @@
     color: var(--muted);
   }
   
-  /* activities */
   .activityItem {
     display: flex;
     justify-content: space-between;
@@ -146,7 +145,6 @@
     color: var(--muted);
   }
   
-  /* message button */
   .msgBtn {
     background: transparent;
     border: 1px solid rgba(0,0,0,0.06);

@@ -1,155 +1,226 @@
-/* Container and controls */
-.controls {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 18px;
-  }
-  
-  .controls input {
-    width: 220px;
-    padding: 8px 14px;
-    border: 1px solid #e2e6ea;
-    border-radius: 8px;
-    background: #fafbfc;
-    font-size: 16px;
-    outline: none;
-    transition: border 0.2s;
-  }
-  
-  .controls input:focus {
-    border-color: #4a90e2; /* Figma blue */
-  }
-  
-  /* Table styles */
-  .table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: #fff;
-    box-shadow: 0 2px 16px rgba(20,25,30,0.05);
-    border-radius: 14px;
-    overflow: hidden;
-  }
-  
-  .table thead th {
-    text-align: left;
-    padding: 13px 16px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #24272a;
-    background: #fafbfc;
-    border-bottom: 1px solid #e2e6ea;
-  }
-  
-  .table tbody tr {
-    transition: background 0.18s;
-  }
-  
-  .table tbody tr:hover {
-    background: rgba(74,144,226,0.07); /* subtle blue hover */
-  }
-  
-  .table td {
-    padding: 13px 16px;
-    font-size: 15px;
-    color: #222;
-    vertical-align: middle;
-    border-bottom: 1px solid #f3f4f8;
-  }
-  
-  .table tbody tr:last-child td {
-    border-bottom: none;
-  }
-  
-  /* Checkbox styles */
-  .table input[type='checkbox'] {
-    accent-color: #4a90e2;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-  }
-  
-  /* Status pill styles */
-  .status {
-    display: inline-block;
-    padding: 4px 14px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 16px;
-    background: #eef1fa;
-    color: #4a90e2;
-    min-width: 80px;
-    text-align: center;
-  }
-  
-  .status[data-status="Complete"] {
-    background: #eefaf0;
-    color: #49c35a;
-  }
-  
-  .status[data-status="Pending"] {
-    background: #faf9ee;
-    color: #f6c700;
-  }
-  
-  .status[data-status="Approved"] {
-    background: #fff7e5;
-    color: #f5a623;
-  }
-  
-  .status[data-status="Rejected"] {
-    background: #fbeaea;
-    color: #ed4b5f;
-  }
-  
-  .status[data-status="In Progress"] {
-    background: #eef1fa;
-    color: #4a90e2;
-  }
-  
-  /* Pagination styles */
-  .pager {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 6px;
-    margin-top: 24px;
-  }
-  
-  .pager button {
-    background: #fff;
-    border: 1px solid #e2e6ea;
-    color: #4a90e2;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 8px;
-    padding: 4px 14px;
-    cursor: pointer;
-    transition: background 0.16s, border 0.16s;
-  }
-  
-  .pager button:disabled {
-    color: #ccc;
-    border-color: #ecf0f1;
-    cursor: not-allowed;
-    background: #f5f6fa;
-  }
-  
-  .pager button:hover:not(:disabled) {
-    background: #f2f7ff;
-    border-color: #bcdffb;
-  }
-  
-  .pager span {
-    display: inline-block;
-    min-width: 28px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    background: #f4f7fb;
-    color: #222;
-    border-radius: 7px;
-    margin: 0 2px;
-  }
-  
+.container {
+  padding: 24px;
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  color: var(--text);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.actionButton {
+  background: none;
+  border: 1px solid var(--muted);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.actionButton:hover {
+  background: rgba(91, 108, 255, 0.1); /* Accent color with transparency */
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--muted);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 8px 12px;
+  width: 220px;
+  transition: border 0.2s;
+}
+
+.searchContainer:focus-within {
+  border-color: var(--accent);
+}
+
+.searchIcon {
+  color: var(--muted);
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.searchContainer input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* Table styles */
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--text);
+}
+
+.table thead th {
+  text-align: left;
+  padding: 16px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface);
+  border-bottom: 1px solid var(--muted);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.table thead th:first-child {
+  padding-left: 20px;
+}
+.table thead th:last-child {
+  padding-right: 20px;
+}
+
+.table tbody tr {
+  background: var(--surface);
+  transition: background 0.18s;
+}
+
+.table tbody tr:hover {
+  background: rgba(91, 108, 255, 0.05); /* Subtle hover effect */
+}
+
+.table td {
+  padding: 12px 16px;
+  font-size: 15px;
+  color: var(--text);
+  vertical-align: middle;
+  border-bottom: 1px solid var(--muted);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody td:first-child {
+  padding-left: 20px;
+}
+.table tbody td:last-child {
+  padding-right: 20px;
+}
+
+/* Checkbox styles */
+.table input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.userName {
+  font-weight: 500;
+}
+
+/* Status pill styles */
+.statusPill {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 16px;
+  min-width: 110px;
+  max-width: 130px;
+  text-align: left;
+  gap: 6px;
+}
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.statusPill[data-status="Complete"] {
+  color: #49c35a;
+}
+.statusPill[data-status="Complete"] .statusDot {
+  background: #49c35a;
+}
+
+.statusPill[data-status="Pending"] {
+  color: #f6c700;
+}
+.statusPill[data-status="Pending"] .statusDot {
+  background: #f6c700;
+}
+
+.statusPill[data-status="Approved"] {
+  color: #f5a623;
+}
+.statusPill[data-status="Approved"] .statusDot {
+  background: #f5a623;
+}
+
+.statusPill[data-status="Rejected"] {
+  color: #ed4b5f;
+}
+.statusPill[data-status="Rejected"] .statusDot {
+  background: #ed4b5f;
+}
+
+.statusPill[data-status="In Progress"] {
+  color: #4a90e2;
+}
+.statusPill[data-status="In Progress"] .statusDot {
+  background: #4a90e2;
+}
+
+.moreButton {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.moreDot {
+  width: 4px;
+  height: 4px;
+  background: var(--muted);
+  border-radius: 50%;
+}
+.moreButton:hover .moreDot {
+  background: var(--accent);
+}
+
+/* Pagination container */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}

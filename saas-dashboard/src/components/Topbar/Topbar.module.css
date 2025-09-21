@@ -1,75 +1,76 @@
 .bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 16px;
-    background-color: var(--topbar-bg, #fff);
-    border-bottom: 1px solid var(--topbar-border, #1C1C1C1A);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .left, .center, .right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icon {
-    font-size: 20px;
-    margin-right: 12px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--icon-color, #333);
-    transition: background 0.18s, color 0.18s;
-    padding: 6px;
-    border-radius: 6px;
-  }
-  
-  .icon:hover, .icon:focus {
-    background: rgba(60,130,243,0.09); /* Figma: subtle blue/gray hover */
-    color: var(--primary, #007bff);
-    outline: none;
-  }
-  
-  .breadcrumb {
-    font-size: 14px;
-    color: var(--text-secondary, #555);
-  }
-  
-  .center {
-    flex: 1;
-    justify-content: center;
-  }
-  
-  .search {
-    width: 100%;
-    max-width: 300px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    border: 1px solid var(--border-color, #ccc);
-    font-size: 14px;
-    outline: none;
-    transition: border 0.18s;
-  }
-  
-  .search:focus {
-    border-color: var(--primary, #007bff);
-    box-shadow: 0 0 0 1px var(--primary, #007bff);
-  }
-  
-  .profile {
-    margin-left: 12px;
-    font-weight: 600;
-    font-size: 14px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: var(--primary, #007bff);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: var(--topbar-bg, var(--surface));
+  border-bottom: 1px solid var(--topbar-border, #1C1C1C1A);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.left, .center, .right {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--icon-color,var(--text));
+  transition: background 0.18s, color 0.18s;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.icon:hover, .icon:focus {
+  background: rgba(60,130,243,0.09); /* Figma: subtle blue/gray hover */
+  color: var(--primary, #007bff);
+  outline: none;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: var(--text-secondary, #555);
+}
+
+.center {
+  flex: 1;
+  justify-content: center;
+}
+
+/* Corrected styles for the search bar */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: var(--search-bg, var(--surface));
+  border-radius: 8px; /* More rounded corners */
+  padding: 6px 12px;
+  width: 100%;
+  max-width: 400px; /* Increased max-width for a wider search bar */
+}
+
+.searchContainer .searchIcon {
+  color: var(--text-secondary, #999);
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.search {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--text-primary, var(--text));
+}
+
+/* The .profile class is not used in the JSX, but I'll update it for clarity if needed.
+   It should be for the Avatar component. */
+.profile {
+  margin-left: 12px;
+}

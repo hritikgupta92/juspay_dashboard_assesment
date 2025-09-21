@@ -1,5 +1,3 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { sidebarConfig } from '../../data/sidebar';
 import SidebarItem from './SidebarItem';
 import styles from './Sidebar.module.css';

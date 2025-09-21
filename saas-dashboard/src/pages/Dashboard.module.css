@@ -1,13 +1,114 @@
-.row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 10px;
-  width:20%;
+/* Container and overall layout */
+.gridContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
 }
-.charts
-{
+
+/* 1. Stat Cards Row */
+.statCards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(280px, 1fr));
-  gap: 10px;
-  width:80%;
+  grid-template-columns: repeat(4, 1fr); /* Corrected to 4 columns */
+  gap: 20px;
+}
+
+/* 2. Main Charts Grid */
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.revenueChart,
+.projectionsChart {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  border-radius: var(--card-radius);
+  padding: 20px;
+}
+
+.projectionsChart {
+  background-color: var(--surface); /* Use variable for background */
+  height: 350px;
+}
+
+/* Revenue Chart header */
+.revenueHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.revenueTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.revenueLegend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dotCurrent {
+  height: 10px;
+  width: 10px;
+  background-color: var(--text);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dotPrevious {
+  height: 10px;
+  width: 10px;
+  background-color: var(--muted);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.value {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.lineChartWrapper {
+  height: 300px;
+}
+
+.projectionsTitle {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* 4. Bottom Row */
+.bottomRow {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.revenueByLocation,
+.totalSales {
+  background-color: var(--surface);
+  border-radius: var(--card-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
 }

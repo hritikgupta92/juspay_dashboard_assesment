@@ -1,6 +1,21 @@
-.app { display: grid; grid-template-columns: 260px 1fr 320px; min-height: 100vh; gap: 20px; padding: 20px; box-sizing: border-box; }
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr 320px;
+  min-height: 100vh;
+  gap: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
 /* .sidebar { } */
-.main { display: flex; flex-direction: column; gap: 12px; }
-.topbar { height: 56px; }
-.content { flex: 1; }
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.topbar {
+  height: 56px;
+}
+.content {
+  flex: 1;
+}
 /* .right { } */

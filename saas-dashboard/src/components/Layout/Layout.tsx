@@ -1,8 +1,8 @@
 
 import Sidebar from '../Sidebar/Sidebar';
 import Topbar from '../Topbar/Topbar';
-import styles from './Layout.module.css';
 import RightPanelStub from './RightPanelStub';
+import styles from './Layout.module.css';
 
 const Layout: React.FC<{children: React.ReactNode}> = ({children}) => {
   return (
