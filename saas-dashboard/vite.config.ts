@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base:'/juspay_dashboard_assesment/',
+  base:'./',
   resolve: {
     dedupe: ['@emotion/react', '@emotion/styled'],
   },
