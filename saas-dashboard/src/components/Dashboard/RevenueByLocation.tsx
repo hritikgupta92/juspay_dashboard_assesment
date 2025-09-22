@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Map from "../../assets/Map.svg";
 
 type Point = {
   id: string;
@@ -76,7 +77,7 @@ export default function RevenueByLocationMap({
         }}
       >
         <img
-          src="./src/assets/Map.svg"
+          src={Map}
           alt="world map"
           style={{
             display: "block",
